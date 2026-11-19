@@ -112,6 +112,14 @@ main>section:not(.hero)>.wrap:not(.pz-split):not(.bk-tl):not(.im-grid):not(.em-v
 .bk-visit .btn{background:#f4ead7;color:#2f5d3a;align-self:flex-start}
 @media(max-width:900px){.bk-tl{grid-template-columns:1fr}.bk-stick{position:static}.bk-cols{columns:1}.bk-visit{grid-template-columns:1fr}.bk-visit figure{aspect-ratio:4/3}}
 
+.sk-foot{padding:clamp(56px,8vw,120px) 0 28px}
+.sk-foot .wrap{max-width:760px;margin:0 auto;padding:0 var(--gutter,24px)}
+.sk-legal{display:flex;justify-content:space-between;gap:16px;flex-wrap:wrap;margin-top:56px;font-size:13px;opacity:.8}
+.f-bk{background:#2f5d3a;color:#f4ead7;text-align:center}
+.f-bk-arch{width:90px;height:130px;border:2px solid #f4ead7;border-radius:90px 90px 0 0;margin:0 auto 32px}
+.f-bk h2{font:300 italic clamp(36px,5vw,64px)/1.05 'Fraunces'}.f-bk p{margin:14px 0 30px;opacity:.85}
+.f-bk .btn{background:#f4ead7;color:#2f5d3a}.f-bk a{color:inherit}
+.nav__link{font-family:'Fraunces';font-style:italic;font-size:18px!important}.nav__logo{font-family:'Fraunces';font-size:24px}
 </style>
 <script>document.documentElement.classList.add('m-enter');setTimeout(()=>document.documentElement.classList.add('m-enter-done'),700)</script>
 <script>document.documentElement.classList.add('mo-js');setTimeout(()=>document.documentElement.classList.add('mo-safe'),2500)</script>
@@ -151,30 +159,7 @@ main>section:not(.hero)>.wrap:not(.pz-split):not(.bk-tl):not(.im-grid):not(.em-v
 <section class="bk-visit" id="visit"><figure><img src="assets/img/photo-f132225972-500.jpg" width="500" height="667" alt="Frische Croissants auf einem Abkühlgitter" loading="lazy" decoding="async" data-source="stand-in" style="object-position:50% 50%"></figure><div><h2>Besuch</h2><address>Mayen Innenstadt</address><dl class="hours" data-assumed><dt>Montag bis Freitag</dt><dd>6:00 bis 18:00</dd><dt>Samstag</dt><dd>6:00 bis 14:00</dd><dt>Sonntag</dt><dd>7:00 bis 11:00</dd></dl><a class="btn btn--primary btn--xl" href="https://www.openstreetmap.org/search?query=Innenstadt%20Mayen">Anfahrt ansehen</a></div></section>
 </main>
 
-<footer class="footer closing footer--visit" id="contact" aria-labelledby="close-h">
-  <div class="wrap">
-    <div class="closing__cta close--type">
-      <div class="section-head"><h2 id="close-h">Brot zum Vorbestellen</h2><p class="t-lead">Rufen Sie bis 18 Uhr an, am nächsten Morgen liegt es bereit.</p></div>
-      <a class="btn btn--primary btn--xl" href="https://www.openstreetmap.org/search?query=Innenstadt%20Mayen">Anfahrt ansehen<svg class="m-arrow" viewBox="0 0 12 12" aria-hidden="true"><path class="m-arrow__stem" d="M1 6h8"/><path class="m-arrow__head" d="M4.5 2.5 8 6l-3.5 3.5"/></svg></a>
-    </div>
-    <div class="closing__links">
-      <div class="grid">
-        <div class="span-6 stack-4">
-          <address class="footer__address">Innenstadt, Mayen</address>
-          <p><a class="link" href="https://www.openstreetmap.org/search?query=Innenstadt%20Mayen">Anfahrt ansehen</a></p>
-        </div>
-        <div class="span-6 start-7 stack-4">
-          <h4>Öffnungszeiten</h4>
-          <dl class="hours" data-assumed><dt>Montag bis Freitag</dt><dd>6:00 bis 18:00</dd><dt>Samstag</dt><dd>6:00 bis 14:00</dd><dt>Sonntag</dt><dd>7:00 bis 11:00</dd></dl>
-        </div>
-      </div>
-      <div class="footer__legal">
-        <span>&copy; 2026 Backstube Eifel &nbsp; Beispieldaten</span>
-        <a class="credits" href="credits.html">Fotos von Wikimedia Commons</a>
-      </div>
-    </div>
-  </div>
-</footer>
+<footer class="sk-foot f-bk" id="contact"><div class="wrap"><div class="f-bk-arch" aria-hidden="true"></div><h2>Brot zum Vorbestellen</h2><p>Rufen Sie bis 18 Uhr an, am nächsten Morgen liegt es bereit.</p><a class="btn btn--primary btn--xl" href="https://www.openstreetmap.org/search?query=Innenstadt%20Mayen">Anfahrt ansehen</a><div class="sk-legal"><span>&copy; 2026 Backstube Eifel &nbsp; Beispieldaten</span><a class="credits" href="credits.html">Fotos von Wikimedia Commons</a></div></div></footer>
 <nav class="actionbar" aria-label="Schnellzugriff">
   <a class="btn btn--primary" href="https://www.openstreetmap.org/search?query=Innenstadt%20Mayen">Anfahrt</a>
 </nav>
