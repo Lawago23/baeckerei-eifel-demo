@@ -74,7 +74,43 @@ body{background:var(--p-bg)}
 .t-label{font-family:'Fraunces';font-style:italic;font-weight:400;font-size:28px;color:var(--p-accent)}
 .nav{background:var(--p-bg)}
 .footer{background:var(--p-accent);color:#f4ead7}
+.footer :is(a,dt,dd,small,p,address,h2,.t-label,.link){color:#f4ead7!important}
+.t-label{margin-bottom:10px}
 @media(prefers-reduced-motion:reduce){.hero--place>.hero__bg{animation:none}}
+
+
+main>section:not(.hero){height:auto!important;min-height:0}
+main>section.ly{padding:clamp(72px,9vw,140px) 0!important}
+main>section:not(.hero)>.wrap{height:auto!important}
+main>section:not(.hero)>.wrap:not(.pz-split):not(.bk-tl):not(.im-grid):not(.em-visit){display:block!important}
+.wrap.pz-split,.wrap.bk-tl,.wrap.im-grid,.wrap.em-visit{display:grid!important}
+.dn-visit .wrap{display:grid!important}
+.em-head{display:flex}
+.ly{padding:clamp(72px,9vw,140px) 0}
+.ly .wrap{max-width:1296px;margin:0 auto;padding:0 var(--gutter,24px)}
+.ly h2{font-family:var(--font-display);font-weight:var(--display-weight);letter-spacing:var(--display-tracking);font-size:clamp(36px,5.2vw,76px);line-height:1}
+.ly img{display:block;width:100%;height:100%;object-fit:cover}
+
+.bk-tl{display:grid;grid-template-columns:4fr 7fr;gap:clamp(32px,6vw,96px);align-items:start}
+.bk-stick{position:sticky;top:110px}.bk-stick p{margin-top:20px;color:var(--p-muted);max-width:28ch;font-style:italic;font-family:'Fraunces'}
+.bk-steps{list-style:none;margin:0;padding:0;display:grid;gap:clamp(48px,8vw,110px)}
+.bk-step{display:grid;grid-template-columns:auto 1fr;gap:6px 28px}
+.bk-step time{font:300 italic clamp(40px,5vw,72px)/1 'Fraunces';color:var(--p-accent);grid-row:1/3}
+.bk-step h3{font:400 28px 'Fraunces'}.bk-step p{color:var(--p-muted);max-width:40ch}
+.bk-step figure{grid-column:1/-1;margin:16px 0 0;aspect-ratio:16/9;overflow:hidden;border-radius:240px 240px 0 0}
+.bk-step figure img{transform:translateY(var(--py,0)) scale(1.1)}
+.bk-theke{background:var(--p-surface)}
+.bk-side{margin:14px 0 40px;color:var(--p-muted)}
+.bk-cols{columns:2;column-gap:clamp(32px,6vw,96px)}
+.bk-g{break-inside:avoid;margin-bottom:40px}
+.bk-visit{display:grid;grid-template-columns:1fr 1fr;background:var(--p-accent);color:#f4ead7;min-height:70svh}
+.bk-visit figure{margin:0;overflow:hidden}.bk-visit figure img{width:100%;height:100%;object-fit:cover}
+.bk-visit>div{padding:clamp(40px,7vw,110px);display:flex;flex-direction:column;justify-content:center;gap:24px}
+.bk-visit address{font:italic 300 clamp(30px,3.6vw,52px)/1.1 'Fraunces'}
+.bk-visit .hours{display:grid;grid-template-columns:auto auto;justify-content:start;gap:6px 28px}
+.bk-visit :is(dt,dd){color:#f4ead7!important}
+.bk-visit .btn{background:#f4ead7;color:#2f5d3a;align-self:flex-start}
+@media(max-width:900px){.bk-tl{grid-template-columns:1fr}.bk-stick{position:static}.bk-cols{columns:1}.bk-visit{grid-template-columns:1fr}.bk-visit figure{aspect-ratio:4/3}}
 
 </style>
 <script>document.documentElement.classList.add('m-enter');setTimeout(()=>document.documentElement.classList.add('m-enter-done'),700)</script>
@@ -110,42 +146,9 @@ body{background:var(--p-bg)}
     </div></div>
   </section>
 
-  <section class="section" id="visit" data-place="visit" aria-labelledby="visit-h" style="--h: 1">
-    <div class="wrap grid grid--top">
-      <div class="span-6">
-        <div class="visit visit--card">
-          <div class="visit__head"><h2 id="visit-h">Besuch</h2></div>
-          <div class="visit__cols">
-            <div class="visit__col">
-              <address class="visit__address">Mayen<br>Innenstadt</address>
-            </div>
-            <div class="visit__col">
-              <dl class="hours" data-assumed><dt>Montag bis Freitag</dt><dd>6:00 bis 18:00</dd><dt>Samstag</dt><dd>6:00 bis 14:00</dd><dt>Sonntag</dt><dd>7:00 bis 11:00</dd></dl>
-            </div>
-          </div>
-        </div>
-      </div>
-      <figure class="pl-photo pl-photo--end span-6 start-7" style="--pl-r: .8"><img src="assets/img/photo-f132225972-500.jpg" width="500" height="667" alt="Frische Croissants auf einem Abkühlgitter" loading="lazy" decoding="async" data-source="stand-in" style="object-position:50% 50%"></figure>
-    </div>
-  </section>
-
-  <section class="section" id="karte" aria-labelledby="karte-h" style="--h: 2">
-    <div class="wrap">
-      <div class="section-head--split">
-        <h2 id="karte-h">Die Theke heute</h2>
-        <p>Alle Preise inklusive Steuer. <a class="link" href="#visit">Zur Anfahrt</a></p>
-      </div>
-      <div class="grid grid--top" style="margin-top:56px"><div class="span-4"><h3 class="t-label">Brot</h3><ul class="rows"><li><span class="rows__name">Bauernbrot<small>1 kg</small></span><span class="rows__value" data-assumed>4,80 €</span></li><li><span class="rows__name">Dinkelbrot<small>750 g</small></span><span class="rows__value" data-assumed>5,20 €</span></li><li><span class="rows__name">Roggenmischbrot<small>1 kg</small></span><span class="rows__value" data-assumed>4,60 €</span></li><li><span class="rows__name">Baguette</span><span class="rows__value" data-assumed>1,90 €</span></li></ul></div><div class="span-4"><h3 class="t-label">Kleingebäck</h3><ul class="rows"><li><span class="rows__name">Brötchen</span><span class="rows__value" data-assumed>0,60 €</span></li><li><span class="rows__name">Croissant</span><span class="rows__value" data-assumed>1,90 €</span></li><li><span class="rows__name">Laugenbrezel</span><span class="rows__value" data-assumed>1,50 €</span></li><li><span class="rows__name">Rosinenschnecke</span><span class="rows__value" data-assumed>2,20 €</span></li></ul></div><div class="span-4"><h3 class="t-label">Kaffee</h3><ul class="rows"><li><span class="rows__name">Kaffee</span><span class="rows__value" data-assumed>2,50 €</span></li><li><span class="rows__name">Cappuccino</span><span class="rows__value" data-assumed>3,50 €</span></li><li><span class="rows__name">Latte Macchiato</span><span class="rows__value" data-assumed>3,80 €</span></li><li><span class="rows__name">Heiße Schokolade</span><span class="rows__value" data-assumed>3,50 €</span></li></ul></div></div>
-      
-    </div>
-  </section>
-
-  <section class="section" id="roesterei" data-moment="photo-chapters" aria-labelledby="roesterei-h">
-    <div class="wrap mo-ph">
-      <div class="mo-ph__head"><h2 id="roesterei-h">Von der Nacht in die Theke</h2><p>Wann in der Backstube was passiert.</p></div>
-      <ol class="mo-ph__list"><li class="mo-ph__ch"><figure class="mo-ph__pic"><img src="assets/img/photo-f78711387-960.jpg" srcset="assets/img/photo-f78711387-500.jpg 500w, assets/img/photo-f78711387-960.jpg 960w" width="960" height="640" alt="Croissants mit Puderzucker in einer Papierschachtel" loading=lazy decoding="async" data-source="stand-in" style="object-position:50% 50%" ></figure><h3>Teig</h3><p>Der Teig ruht über Nacht und wird früh von Hand geformt.</p></li><li class="mo-ph__ch"><figure class="mo-ph__pic"><img src="assets/img/photo-f27866902-960.jpg" srcset="assets/img/photo-f27866902-500.jpg 500w, assets/img/photo-f27866902-960.jpg 960w" width="960" height="640" alt="Eine Bäckerin füllt Teig in eine große Knetmaschine" loading=lazy decoding="async" data-source="stand-in" style="object-position:50% 50%" ></figure><h3>Kneten</h3><p>Große Mengen gehen in die Maschine, das Formen bleibt Handarbeit.</p></li><li class="mo-ph__ch"><figure class="mo-ph__pic"><img src="assets/img/photo-f22827857-960.jpg" srcset="assets/img/photo-f22827857-500.jpg 500w, assets/img/photo-f22827857-960.jpg 960w" width="960" height="640" alt="Eine Holztheke mit Broten und Gebäck" loading=lazy decoding="async" data-source="stand-in" style="object-position:50% 50%" ></figure><h3>Theke</h3><p>Ab 6 Uhr liegt alles frisch auf der Theke.</p></li></ol>
-    </div>
-  </section>
+<section class="ly" id="roesterei"><div class="wrap bk-tl"><div class="bk-stick"><h2>Von der Nacht in die Theke</h2><p>Wann in der Backstube was passiert.</p></div><ol class="bk-steps"><li class="bk-step sk-rev"><time>04:00</time><div><h3>Teig</h3><p>Der Teig ruht über Nacht und wird früh von Hand geformt.</p></div><figure data-par><img src="assets/img/photo-f78711387-960.jpg" srcset="assets/img/photo-f78711387-500.jpg 500w, assets/img/photo-f78711387-960.jpg 960w" sizes="(max-width: 1023px) 100vw, 50vw" width="960" height="640" alt="Croissants mit Puderzucker in einer Papierschachtel" loading=lazy decoding="async" data-source="stand-in" style="object-position:50% 50%" ></figure></li><li class="bk-step sk-rev"><time>05:00</time><div><h3>Kneten</h3><p>Große Mengen gehen in die Maschine, das Formen bleibt Handarbeit.</p></div><figure data-par><img src="assets/img/photo-f27866902-960.jpg" srcset="assets/img/photo-f27866902-500.jpg 500w, assets/img/photo-f27866902-960.jpg 960w" sizes="(max-width: 1023px) 100vw, 50vw" width="960" height="640" alt="Eine Bäckerin füllt Teig in eine große Knetmaschine" loading=lazy decoding="async" data-source="stand-in" style="object-position:50% 50%" ></figure></li><li class="bk-step sk-rev"><time>06:00</time><div><h3>Theke</h3><p>Ab 6 Uhr liegt alles frisch auf der Theke.</p></div><figure data-par><img src="assets/img/photo-f22827857-960.jpg" srcset="assets/img/photo-f22827857-500.jpg 500w, assets/img/photo-f22827857-960.jpg 960w" sizes="(max-width: 1023px) 100vw, 50vw" width="960" height="640" alt="Eine Holztheke mit Broten und Gebäck" loading=lazy decoding="async" data-source="stand-in" style="object-position:50% 50%" ></figure></li></ol></div></section>
+<section class="ly bk-theke" id="karte"><div class="wrap"><h2>Die Theke heute</h2><p class="bk-side">Alle Preise inklusive Steuer.</p><div class="bk-cols"><section class="bk-g"><h3 class="t-label">Brot</h3><ul class="rows"><li><span class="rows__name">Bauernbrot<small>1 kg</small></span><span class="rows__value" data-assumed>4,80 €</span></li><li><span class="rows__name">Dinkelbrot<small>750 g</small></span><span class="rows__value" data-assumed>5,20 €</span></li><li><span class="rows__name">Roggenmischbrot<small>1 kg</small></span><span class="rows__value" data-assumed>4,60 €</span></li><li><span class="rows__name">Baguette</span><span class="rows__value" data-assumed>1,90 €</span></li></ul></section><section class="bk-g"><h3 class="t-label">Kleingebäck</h3><ul class="rows"><li><span class="rows__name">Brötchen</span><span class="rows__value" data-assumed>0,60 €</span></li><li><span class="rows__name">Croissant</span><span class="rows__value" data-assumed>1,90 €</span></li><li><span class="rows__name">Laugenbrezel</span><span class="rows__value" data-assumed>1,50 €</span></li><li><span class="rows__name">Rosinenschnecke</span><span class="rows__value" data-assumed>2,20 €</span></li></ul></section><section class="bk-g"><h3 class="t-label">Kaffee</h3><ul class="rows"><li><span class="rows__name">Kaffee</span><span class="rows__value" data-assumed>2,50 €</span></li><li><span class="rows__name">Cappuccino</span><span class="rows__value" data-assumed>3,50 €</span></li><li><span class="rows__name">Latte Macchiato</span><span class="rows__value" data-assumed>3,80 €</span></li><li><span class="rows__name">Heiße Schokolade</span><span class="rows__value" data-assumed>3,50 €</span></li></ul></section></div></div></section>
+<section class="bk-visit" id="visit"><figure><img src="assets/img/photo-f132225972-500.jpg" width="500" height="667" alt="Frische Croissants auf einem Abkühlgitter" loading="lazy" decoding="async" data-source="stand-in" style="object-position:50% 50%"></figure><div><h2>Besuch</h2><address>Mayen Innenstadt</address><dl class="hours" data-assumed><dt>Montag bis Freitag</dt><dd>6:00 bis 18:00</dd><dt>Samstag</dt><dd>6:00 bis 14:00</dd><dt>Sonntag</dt><dd>7:00 bis 11:00</dd></dl><a class="btn btn--primary btn--xl" href="https://www.openstreetmap.org/search?query=Innenstadt%20Mayen">Anfahrt ansehen</a></div></section>
 </main>
 
 <footer class="footer closing footer--visit" id="contact" aria-labelledby="close-h">
@@ -162,7 +165,7 @@ body{background:var(--p-bg)}
         </div>
         <div class="span-6 start-7 stack-4">
           <h4>Öffnungszeiten</h4>
-          <dl class="hours" data-assumed><dt>Montag bis Freitag</dt><dd>8:00 bis 18:00</dd><dt>Samstag</dt><dd>9:00 bis 17:00</dd><dt>Sonntag</dt><dd>10:00 bis 16:00</dd></dl>
+          <dl class="hours" data-assumed><dt>Montag bis Freitag</dt><dd>6:00 bis 18:00</dd><dt>Samstag</dt><dd>6:00 bis 14:00</dd><dt>Sonntag</dt><dd>7:00 bis 11:00</dd></dl>
         </div>
       </div>
       <div class="footer__legal">
